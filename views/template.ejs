@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        table {
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        </style>
+    </head>
+    <body style="background:url('../pictures/container-yard.png') no-repeat; background-size:100% 100%;">
+        <div style="width: 85%; margin: 0 7.5%; text-align: center;">
+            <div style="text-align: center; padding-left: 50px;">            
+                <h3>Container Details</h5>
+                <table style="margin-left: auto;margin-right: auto;">
+                <% if (containers.length > 0) { %>
+                    <tr><td>ContainerId</td>
+                        <td>Entry File Number</td>
+                        <td>Container Type</td>
+                        <td>Container Size</td>
+                    </tr>
+                    <% containers.forEach(container => {%>
+                       <tr><td><%= container.containerId %></td>
+                        <td><%= container.entryFileNo %></td>
+                        <td><%= container.containerType %></td>
+                        <td><%=container.containerSize %></td></tr>
+                    <%  });%>
+                <% }%>
+                </table>
+             </div>
+        </div>
+    </body>
+</html>
